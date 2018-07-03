@@ -13,9 +13,8 @@ var min = document.querySelector('.min')
 var max = 100
 var randomNumber = 0;
 var guessInput = 0;
-// console.log(inputfield.value.length)
 
-
+window.addEventListener("load", getRandom);
 guessButton.addEventListener('click' , numberGuess)
 clearButton.addEventListener('click' , clearField)
 resetButton.addEventListener('click' , resetInput)
@@ -23,7 +22,6 @@ inputfield.addEventListener('keyup' , disableClear)
 inputfield.addEventListener('keyup' , enableReset)
 inputfield.addEventListener('keyup' , enableGuess)
 
-getRandom();
 
 function disableClear() {
 	if (inputfield.value === "") {
@@ -35,7 +33,7 @@ else {
 }
 
 function enableReset() {
-	if (inputfield.value ===""){
+	if (inputfield.value === ""){
 		resetButton.disabled = true;
 	}else {
 		resetButton.disabled = false;
@@ -56,7 +54,6 @@ function numberGuess() {
 	numberArea.innerText = guessInput
 	
 	if (guessInput > 100){
-
 
 	} else if ( guessInput === randomNumber){
 		lastGuessText.innerText = "boom";
